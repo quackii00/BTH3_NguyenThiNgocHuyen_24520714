@@ -11,35 +11,39 @@ using System.Windows.Forms;
 
 namespace Bai02
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
-        private Random Rand = new Random();
-        private Point randomPos;
-        public Form1()
+        private Random rand = new Random();
+        private Point randomPos = new Point();
+        public MainForm()
         {
             InitializeComponent();
-        }
 
-        private void paintevent(object sender, PaintEventArgs e)
-        {
-            
-            label1.Location = randomPos;
-            int x = Rand.Next(0, 256);
-            int y = Rand.Next(0, 256);
-            int z = Rand.Next(0, 256);
-            label1.BackColor = Color.FromArgb(x,y,z);
-            this.Refresh();
         }
-
-        private void btnPaintEven(object sender, EventArgs e)
+        //Vẽ lại Form
+        private void MainForm_Paint(object sender, PaintEventArgs e)
         {
-            int MaxY = this.ClientSize.Height -label1.Height ;
-            int MaxX = this.ClientSize.Width -label1.Width ;
-            int x = Rand.Next(0, MaxX);
-            int y = Rand.Next(0, MaxY);
+            LabelPaintEvent.Location = randomPos;
+        }
+        //Khi click tạo 1 ví trị random đồng thời gọi vẽ lại form
+        private void BtnPaintEvent_Click(object sender, EventArgs e)
+        {
+            RanDomPoint();
+            this.Invalidate();
+        }
+        private void MainForm_Resize(object sender, EventArgs e)
+        {
+            RanDomPoint();
+            this.Invalidate();
+        }
+        public void RanDomPoint()
+        {
+            int MaxY = this.ClientSize.Height - LabelPaintEvent.Height;
+            int MaxX = this.ClientSize.Width - LabelPaintEvent.Width;
+            int x = rand.Next(0, MaxX);
+            int y = rand.Next(0, MaxY);
             randomPos = new Point(x, y);
-            
-          
         }
+        
     }
 }
