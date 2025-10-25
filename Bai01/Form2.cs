@@ -12,15 +12,14 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Bai01
 {
-    public partial class Form2 : Form
+    public partial class ModalForm : Form
     {
         
-        public Form2()
+        public ModalForm()
         {
             InitializeComponent();
             
         }
-
-       
+ 
     }
 }
