@@ -22,34 +22,47 @@ namespace Bai05
         private void BtnPlus_Click(object sender, EventArgs e)
         {
             if (TextBoxNum1.Text == "" || TextBoxNum2.Text == "")
+            {
+                TextBoxAnswer.Clear();
                 MessageBox.Show("Nếu để trống ô thì ô đó mặc định bằng 0", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
             TextBoxAnswer.Text = (Num1 + Num2).ToString();
         }
 
         private void BtnSubtract_Click(object sender, EventArgs e)
         {
             if (TextBoxNum1.Text == "" || TextBoxNum2.Text == "")
+            {
+                TextBoxAnswer.Clear();
                 MessageBox.Show("Nếu để trống ô thì ô đó mặc định bằng 0", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
             TextBoxAnswer.Text = (Num1 - Num2).ToString();
         }
 
         private void BtnMulti_Click(object sender, EventArgs e)
         {
             if (TextBoxNum1.Text == "" || TextBoxNum2.Text == "")
+            {
+                TextBoxAnswer.Clear();
                 MessageBox.Show("Nếu để trống ô thì ô đó mặc định bằng 0", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
             TextBoxAnswer.Text = (Num1 * Num2).ToString();
         }
 
         private void BtnDivide_Click(object sender, EventArgs e)
         {
             if (TextBoxNum1.Text == "" || TextBoxNum2.Text == "")
+            {
+                TextBoxAnswer.Clear();
                 MessageBox.Show("Nếu để trống ô thì ô đó mặc định bằng 0", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
             if (Num2 != 0)
             {
                 TextBoxAnswer.Text = (Num1 / Num2).ToString();
             }
             else
             {
+                TextBoxAnswer.Clear();
                 MessageBox.Show("Không thể chia cho không! \nMời nhập lại", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
