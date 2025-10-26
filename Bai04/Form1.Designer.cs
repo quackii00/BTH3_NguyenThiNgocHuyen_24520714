@@ -31,7 +31,6 @@
             this.menu = new System.Windows.Forms.MenuStrip();
             this.formatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.colorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,7 +53,6 @@
             // formatToolStripMenuItem
             // 
             this.formatToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripSeparator1,
             this.colorToolStripMenuItem});
             this.formatToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.formatToolStripMenuItem.Name = "formatToolStripMenuItem";
@@ -68,11 +66,6 @@
             this.colorToolStripMenuItem.Text = "Color";
             this.colorToolStripMenuItem.Click += new System.EventHandler(this.MenuItemColor_Click);
             // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(356, 6);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -80,7 +73,6 @@
             this.ClientSize = new System.Drawing.Size(874, 579);
             this.Controls.Add(this.menu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.MainMenuStrip = this.menu;
             this.MaximizeBox = false;
             this.Name = "MainForm";
@@ -97,7 +89,6 @@
 
         private System.Windows.Forms.MenuStrip menu;
         private System.Windows.Forms.ToolStripMenuItem formatToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem colorToolStripMenuItem;
     }
 }
