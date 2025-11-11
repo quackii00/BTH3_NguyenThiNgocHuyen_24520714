@@ -88,5 +88,43 @@ namespace Bai08
 
             }
         }
+
+        private void BtnDeleteClick(object sender, EventArgs e)
+        {
+            bool isExist = false;
+            int index = -1;
+            // Kiểm tra số tài khoản đã tồn tại
+            foreach (ListViewItem item in ListTaiKhoan.Items)
+            {
+                if (item.SubItems[1].Text == TxtBoxSTK.Text)
+                {
+                    count -= int.Parse(item.SubItems[4].Text);
+                    index = item.Index;
+                    isExist = true;
+                    break;
+                }
+            }
+            if (isExist)
+            {
+                DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa tài khoản này không?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    ListTaiKhoan.Items.RemoveAt(index);
+                    // Cập nhật lại STT
+                    for (int i = 0; i < ListTaiKhoan.Items.Count; i++)
+                    {
+                        ListTaiKhoan.Items[i].SubItems[0].Text = (i + 1).ToString();
+                    }
+                    LabelTongTien.Text = count.ToString();
+                    ClearInputs();
+                    MessageBox.Show("Xóa tài khoản thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            else
+            {
+                ClearInputs();
+                MessageBox.Show("Không tìm thấy số tài khoản cần xóa!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }    
+        }
     }
 }
