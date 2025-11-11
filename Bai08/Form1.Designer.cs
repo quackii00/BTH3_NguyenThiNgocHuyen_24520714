@@ -235,6 +235,7 @@
             this.BtnExit.TabIndex = 10;
             this.BtnExit.Text = "Thoát";
             this.BtnExit.UseVisualStyleBackColor = true;
+            this.BtnExit.Click += new System.EventHandler(this.btnExitClick);
             // 
             // ListTaiKhoan
             // 
@@ -254,6 +255,7 @@
             this.ListTaiKhoan.TabIndex = 2;
             this.ListTaiKhoan.UseCompatibleStateImageBehavior = false;
             this.ListTaiKhoan.View = System.Windows.Forms.View.Details;
+            this.ListTaiKhoan.SelectedIndexChanged += new System.EventHandler(this.SelectItem);
             // 
             // ColSTT
             // 

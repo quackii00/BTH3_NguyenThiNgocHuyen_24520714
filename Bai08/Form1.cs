@@ -126,5 +126,27 @@ namespace Bai08
                 MessageBox.Show("Không tìm thấy số tài khoản cần xóa!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }    
         }
+
+        private void SelectItem(object sender, EventArgs e)
+        {
+            if (ListTaiKhoan.SelectedItems.Count > 0)
+            {
+                int index = ListTaiKhoan.SelectedItems[0].Index;
+                ListViewItem item = ListTaiKhoan.SelectedItems[0];
+                TxtBoxSTK.Text = item.SubItems[1].Text;
+                TxtBoxTenKh.Text = item.SubItems[2].Text;
+                TxtBoxAddress.Text = item.SubItems[3].Text;
+                TxtBoxSoTien.Text = item.SubItems[4].Text;
+            }
+            else
+            {
+                    ClearInputs();
+            }
+        }
+
+        private void btnExitClick(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
