@@ -41,7 +41,7 @@
             this.BtnAddorUpdate = new System.Windows.Forms.Button();
             this.BtnDelete = new System.Windows.Forms.Button();
             this.BtnExit = new System.Windows.Forms.Button();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.ListTaiKhoan = new System.Windows.Forms.ListView();
             this.ColSTT = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ColMaTK = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ColTenKH = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -207,6 +207,7 @@
             this.BtnAddorUpdate.TabIndex = 8;
             this.BtnAddorUpdate.Text = "Thêm/Cập Nhật";
             this.BtnAddorUpdate.UseVisualStyleBackColor = true;
+            this.BtnAddorUpdate.Click += new System.EventHandler(this.BtnAddClick);
             // 
             // BtnDelete
             // 
@@ -234,24 +235,24 @@
             this.BtnExit.Text = "Thoát";
             this.BtnExit.UseVisualStyleBackColor = true;
             // 
-            // listView1
+            // ListTaiKhoan
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.ListTaiKhoan.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.ColSTT,
             this.ColMaTK,
             this.ColTenKH,
             this.ColAddress,
             this.ColMoney});
-            this.listView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listView1.FullRowSelect = true;
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(29, 257);
-            this.listView1.Margin = new System.Windows.Forms.Padding(2);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(592, 225);
-            this.listView1.TabIndex = 2;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.ListTaiKhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ListTaiKhoan.FullRowSelect = true;
+            this.ListTaiKhoan.HideSelection = false;
+            this.ListTaiKhoan.Location = new System.Drawing.Point(29, 257);
+            this.ListTaiKhoan.Margin = new System.Windows.Forms.Padding(2);
+            this.ListTaiKhoan.Name = "ListTaiKhoan";
+            this.ListTaiKhoan.Size = new System.Drawing.Size(592, 225);
+            this.ListTaiKhoan.TabIndex = 2;
+            this.ListTaiKhoan.UseCompatibleStateImageBehavior = false;
+            this.ListTaiKhoan.View = System.Windows.Forms.View.Details;
             // 
             // ColSTT
             // 
@@ -325,7 +326,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(642, 527);
             this.Controls.Add(this.tableLayoutPanel2);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.ListTaiKhoan);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -355,7 +356,7 @@
         private System.Windows.Forms.Button BtnAddorUpdate;
         private System.Windows.Forms.Button BtnDelete;
         private System.Windows.Forms.Button BtnExit;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView ListTaiKhoan;
         private System.Windows.Forms.ColumnHeader ColSTT;
         private System.Windows.Forms.ColumnHeader ColMaTK;
         private System.Windows.Forms.ColumnHeader ColTenKH;
