@@ -18,6 +18,7 @@ namespace Bai08
         {
             InitializeComponent();
         }
+        // Cập nhật item trong ListView
         private void UpdatetoListView(int row)
         {
             count += int.Parse(TxtBoxSoTien.Text);
@@ -31,6 +32,7 @@ namespace Bai08
             ClearInputs(); 
 
         }
+        // Thêm mới item vào ListView
         private void AddtoListView()
         {
             int row = ListTaiKhoan.Items.Count;
@@ -52,6 +54,7 @@ namespace Bai08
             TxtBoxTenKh.Clear();
             TxtBoxSoTien.Clear();
         }
+        // Thêm item vào ListView
         private void BtnAddClick(object sender, EventArgs e)
         {
             if (TxtBoxAddress.Text == "" || TxtBoxSTK.Text == "" || TxtBoxTenKh.Text == "" || TxtBoxSoTien.Text =="")
@@ -88,7 +91,7 @@ namespace Bai08
 
             }
         }
-
+        // Xóa item trong ListView
         private void BtnDeleteClick(object sender, EventArgs e)
         {
             bool isExist = false;
@@ -104,6 +107,7 @@ namespace Bai08
                     break;
                 }
             }
+            // Xóa item nếu tồn tại
             if (isExist)
             {
                 DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa tài khoản này không?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -126,7 +130,7 @@ namespace Bai08
                 MessageBox.Show("Không tìm thấy số tài khoản cần xóa!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }    
         }
-
+        //Chọn item trong ListView
         private void SelectItem(object sender, EventArgs e)
         {
             if (ListTaiKhoan.SelectedItems.Count > 0)
