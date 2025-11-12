@@ -125,18 +125,32 @@ namespace Bai06
         private void BtnRecipClick(object sender, EventArgs e)
         {
             double temp = double.Parse(Answerbox.Text);
-            temp = 1 / temp;
-            Answerbox.Text = temp.ToString();
-            tempNumber = temp;
+            if (temp == 0)
+            {
+                Answerbox.Text = "Không thể nghịch đảo 0";
+            }
+            else
+            {
+                temp = 1 / temp;
+                Answerbox.Text = temp.ToString();
+                tempNumber = temp;
+            }
             flagnewcalculation = true;
         }
         //Nhấn nút căn bậc hai
         private void BtnSqrtClick(object sender, EventArgs e)
         {
             double temp = double.Parse(Answerbox.Text);
-            temp = Math.Sqrt(temp);
-            Answerbox.Text = temp.ToString();
-            tempNumber = temp;
+            if (temp < 0)
+            {
+                Answerbox.Text = "Khong the tinh can bac hai cua so am";
+            }
+            else
+            {
+                temp = Math.Sqrt(temp);
+                Answerbox.Text = temp.ToString();
+                tempNumber = temp;
+            }
             flagnewcalculation = true;
         }
         //Nhấn nút MC
